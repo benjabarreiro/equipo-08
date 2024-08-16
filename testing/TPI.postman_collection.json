@@ -1,0 +1,1253 @@
+{
+	"info": {
+		"_postman_id": "3e2993ff-6ec0-4cb5-b7ff-281ca9aeb8ba",
+		"name": "TPI",
+		"description": "Todos los endpoints de la API del TPI del Grupo 8.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Vehicles",
+			"item": [
+				{
+					"name": "Vehicle-Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZ3VzLmNhc2Fyb25lQGdtYWlsLmNvbSIsImV4cCI6MTY5MDM1NTYwNywibm9tYnJlIjoiYWd1cyJ9.cYAfRYh5sp06weKKxGCahK-yhmeQ4yxL0lztnF-iXv6ikaXCUpctcOc0Pw2LO8i3",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"characteristicsList\": [\r\n        {\r\n            \"idCharacteristic\": 12\r\n        },\r\n        {\r\n            \"idCharacteristic\": 14\r\n        }\r\n    ],\r\n    \"vehicleType\": {\r\n        \"idVehicleType\": 53\r\n        },\r\n    \"pricePerDay\": 2.8,\r\n    \"details\": \"Una excelente opción para quienes aman las motocicletas, pero también disfrutan de la compañía de algún ser querido... sí, incluso canino! Podrás elegir el modelo según tus gustos personales. Recomendamos la de la tercera imágen por su estética única.\",\r\n    \"imagesList\": [\r\n        {\r\n            \"idImage\": 1\r\n        },\r\n        {\r\n            \"idImage\": 2\r\n        },\r\n        {\r\n            \"idImage\": 3\r\n        },\r\n        {\r\n            \"idImage\": 4\r\n        },\r\n        {\r\n            \"idImage\": 5\r\n        }\r\n    ],\r\n    \"model\": \"Motocicleta de categoría con Sidecar.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/vehicle",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vehicle-GetByID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/vehicle/104",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle",
+								"104"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vehicle-Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"characteristicsList\": [\r\n        {\r\n            \"idCharacteristic\": 4\r\n        },\r\n        {\r\n            \"idCharacteristic\": 7\r\n        },\r\n        {\r\n            \"idCharacteristic\": 8\r\n        }\r\n    ],\r\n    \"vehicleType\": {\r\n        \"idVehicleType\": 3\r\n        },\r\n    \"pricePerDay\": 3.62,\r\n    \"details\": \"Sidecar Harley Davidson año 1930 sin rodar. Color Negro.\",\r\n    \"imagesList\": [\r\n        {\r\n            \"idImage\": 855\r\n        },\r\n        {\r\n            \"idImage\": 856\r\n        },\r\n        {\r\n            \"idImage\": 858\r\n        },\r\n        {\r\n            \"idImage\": 859\r\n        },\r\n        {\r\n            \"idImage\": 860\r\n        }\r\n    ],\r\n    \"model\": \"puntas \"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/vehicle/354",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle",
+								"354"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vehicle-Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/vehicle/delete/402",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle",
+								"delete",
+								"402"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vehicle-List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/vehicle",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vehicle-RandomList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/vehicle/random-list",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle",
+								"random-list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vehicles-FilterByCityName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/vehicle/filterByCityName/San%20Carlos%20de%20Bariloche",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle",
+								"filterByCityName",
+								"San%20Carlos%20de%20Bariloche"
+							],
+							"query": [
+								{
+									"key": "city",
+									"value": "San%20Carlos%20de%20Bariloche",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vehicles-FilterByVehicleType-Paginated",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/vehicle/category?vehicleTypeId=52",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle",
+								"category"
+							],
+							"query": [
+								{
+									"key": "vehicleTypeId",
+									"value": "52"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vehicle-FilterByDate",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/vehicle/filterByDate?start=2023/12/01&end=2023/12/10",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle",
+								"filterByDate"
+							],
+							"query": [
+								{
+									"key": "start",
+									"value": "2023/12/01"
+								},
+								{
+									"key": "end",
+									"value": "2023/12/10"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "VehicleTypes",
+			"item": [
+				{
+					"name": "VehicleType-Create",
+					"request": {
+						"auth": {
+							"type": "apikey"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Auto Carpa\",\r\n    \"details\": \"Un auto con un accesorio, generalmente en el techo (aunque no siempre). Este accesorio brinda la facilidad de tener una carpa en pocos segundos, estés donde estés.\",\r\n    \"image\": {\r\n        \"idImage\": 18\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/vehicleType",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicleType"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VehicleType-GetByID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/vehicleType/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicleType",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VehicleType-Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"image\": {\r\n        \"idImage\": 3\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/vehicleType/53",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicleType",
+								"53"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VehicleType-Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/vehicleType/delete/7",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicleType",
+								"delete",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VehicleType-List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/vehicleType",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicleType"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Characteristics",
+			"item": [
+				{
+					"name": "Characteristic-Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Aire acondicionado\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/characteristic",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"characteristic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Characteristic-GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/characteristic/12",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"characteristic",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Characteristic-Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/characteristic/11",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"characteristic",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Characteristic-Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/characteristic/deleteCharacteristic/101",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"characteristic",
+								"deleteCharacteristic",
+								"101"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Characteristic-List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/characteristic",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"characteristic"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Images",
+			"item": [
+				{
+					"name": "Images-Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/Agus/Desktop/logo autocarpa.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/image",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"image"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Images-FindByID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/image/860",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"image",
+								"860"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Images-Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/image/delete/802",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"image",
+								"delete",
+								"802"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Images-ListAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/image",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"image"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Registration",
+			"item": [
+				{
+					"name": "Registration-Create",
+					"request": {
+						"auth": {
+							"type": "jwt",
+							"jwt": [
+								{
+									"key": "algorithm",
+									"value": "HS256",
+									"type": "string"
+								},
+								{
+									"key": "isSecretBase64Encoded",
+									"value": false,
+									"type": "boolean"
+								},
+								{
+									"key": "payload",
+									"value": "{}",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "headerPrefix",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "queryParamKey",
+									"value": "token",
+									"type": "string"
+								},
+								{
+									"key": "header",
+									"value": "{}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Renata\",\r\n    \"lastName\": \"Glasc\",\r\n    \"email\": \"renata@glasc.com\",\r\n    \"password\": \"abcdefg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/users/save",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registration-AscendToAdmin",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idUsers\": 102,\r\n    \"name\": \"emi\",\r\n    \"lastname\": \"navarro\",\r\n    \"email\": \"emi.navarro90@gmail.com\",\r\n    \"password\": \"$2a$10$zCmEDc8AhyZFAUzVl5XKeu1ToIDLk26VsmpcNAc8k/TJsIj.7.7k6\",\r\n    \"idRoles\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/users/ascendToAdmin",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"ascendToAdmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registration-List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZ3VzLmNhc2Fyb25lQGdtYWlsLmNvbSIsImV4cCI6MTY4NjYzNzAzMywibm9tYnJlIjoiYWd1cyJ9.mh01o5SaA-SDZ6519pjM9F3pOlH76SgvrS1t_aFCllVle8VZyW-tMpsOT-BXeLsM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/users/list",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registration-FindByEmail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/users/findByEmail/emi.navarro90@gmail.com",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"findByEmail",
+								"emi.navarro90@gmail.com"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "LogIn",
+			"item": [
+				{
+					"name": "LogIn",
+					"request": {
+						"auth": {
+							"type": "bearer"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "username",
+								"value": "agus.casarone@gmail.com",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "password",
+								"value": "123abc",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"agus.casarone@gmail.com\",\r\n    \"password\": \"123abc\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Places",
+			"item": [
+				{
+					"name": "Cities",
+					"item": [
+						{
+							"name": "Cities-Create",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"cityName\": \"Merlo\",\r\n  \"province\": {\r\n    \"idProvince\": 102\r\n  },\r\n  \"country\": {\r\n    \"idCountry\": 1\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/city",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"city"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Cities-GetByID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/city/56",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"city",
+										"56"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Cities-Update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"cityName\": \"Villa Mercedes\",\r\n    \"province\": {\r\n        \"idProvince\": 102\r\n    },\r\n    \"country\": {\r\n        \"idCountry\": 102012\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/city/102",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"city",
+										"102"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Cities-Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/city/delete/56",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"city",
+										"delete",
+										"56"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Cities-ListAll",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/city",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"city"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Cities-FindByName",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/city/findByCityName/la%20plata",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"city",
+										"findByCityName",
+										"la%20plata"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Provinces",
+					"item": [
+						{
+							"name": "Provinces-Create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"provinceName\": \"Córdoba\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/province",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"province"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Provinces-GetByID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/province/22",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"province",
+										"22"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Provinces-Update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"provinceName\": \"Ciudad Autónoma de Buenos Aires\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/province/23",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"province",
+										"23"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Provinces-Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/province/delete/23",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"province",
+										"delete",
+										"23"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Provinces-ListAll",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/province",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"province"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Countries",
+					"item": [
+						{
+							"name": "Countries-Create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"countryName\": \"Chile\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/country",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"country"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Countries-GetByID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/country/2",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"country",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Countries-Update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"countryName\": \"Venezuela\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/country/2",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"country",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Countries-Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/country/delete/102",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"country",
+										"delete",
+										"102"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Countries-ListAll",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/country",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"country"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Bookings",
+			"item": [
+				{
+					"name": "Booking-Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"startDate\": \"2023-06-12\",\r\n    \"endDate\": \"2023-05-30\",\r\n    \"vehicle\": {\r\n        \"idVehicle\": 252\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/booking",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"booking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Booking-GetByID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/booking/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"booking",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Booking-Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"startDate\": \"2023-06-01\",\r\n    \"endDate\": \"2023-06-30\",\r\n    \"vehicle\": {\r\n        \"idVehicle\": 105\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/booking/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"booking",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Booking-Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/booking/delete/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"booking",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Booking-ListAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/booking",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"booking"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

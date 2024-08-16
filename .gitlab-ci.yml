@@ -1,0 +1,47 @@
+stages:
+  - build_frontend
+  - deploy_frontend
+  - build_and_deploy_backend
+
+build_and_deploy_backend:
+  stage: build_and_deploy_backend
+  image: maven:3.8.3-openjdk-17
+  script:
+    - cd backend-v2/back
+    - echo "running mvn package..."
+    - mvn clean package
+    - echo "Application successfully build"
+    - apt-get update && apt-get install -y openssh-client
+    - chmod 400 $SSH_PRIVATE_KEY
+    - echo "Deploying application"
+    - scp -o StrictHostKeyChecking=no -i $SSH_PRIVATE_KEY target/*.jar ubuntu@ec2-3-128-46-178.us-east-2.compute.amazonaws.com:/home/ubuntu
+    - ssh -o StrictHostKeyChecking=no -i $SSH_PRIVATE_KEY ubuntu@ec2-3-128-46-178.us-east-2.compute.amazonaws.com "ID_del_proceso=\$(pgrep -f 'java -jar back-0.0.1-SNAPSHOT.jar') && kill \$ID_del_proceso && nohup java -jar back-0.0.1-SNAPSHOT.jar &"
+    - echo "Application successfully deployed."
+
+build_frontend:
+  stage: build_frontend
+  image: node:latest
+  script:
+    - cd frontend
+    - export VITE_API_URL=$VITE_API_URL
+    - echo "Installing packages..."
+    - npm install
+    - echo "running npm run build..."
+    - npm run build
+    - echo "Application successfully build"
+  artifacts:
+    paths:
+      - frontend/dist
+
+
+deploy_frontend:
+  stage: deploy_frontend
+  image: python:3.6
+  script:
+    - echo "Installing aws command line"
+    - pip install awscli
+    - cd frontend
+    - echo "Uploading files to AWS Bucket"
+    - aws s3 cp --recursive dist s3://offroad-rentals-e8-c7
+    - echo "Application successfully deployed."
+

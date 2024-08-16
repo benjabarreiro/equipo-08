@@ -1,0 +1,929 @@
+{
+	"info": {
+		"_postman_id": "6747308a-d291-4540-82c1-49541438ce33",
+		"name": "TPI",
+		"description": "Todos los endpoints de la API del TPI del Grupo 8.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "28163232",
+		"_collection_link": "https://red-escape-798254.postman.co/workspace/TPI-Group8-CTD~daa63a04-cd5b-4d63-848f-3d070baa60f9/collection/24423357-6747308a-d291-4540-82c1-49541438ce33?action=share&creator=28163232&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Vehicles",
+			"item": [
+				{
+					"name": "Vehicle-Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZ3VzLmNhc2Fyb25lQGdtYWlsLmNvbSIsImV4cCI6MTY4NzgzNzc4MSwibm9tYnJlIjoiYWd1cyJ9.OAN9qnTSNuFKdyHy1kVqLhRrerOx8qbTF18ubTV52j_eQx0QiNVM3DUOaX9I1cGA"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"characteristicsList\": [\r\n        {\r\n            \"idCharacteristic\": 52\r\n        },\r\n        {\r\n            \"idCharacteristic\": 53\r\n        },\r\n        {\r\n            \"idCharacteristic\": 54\r\n        }\r\n    ],\r\n    \"vehicleType\": {\r\n        \"idVehicleType\": 53\r\n    },\r\n    \"pricePerDay\": 3501,\r\n    \"details\": \"La forma más cómoda de viajar en familia y acampar sin tener que preocuparse por el lugar. Cuenta con mucho espacio para guardar equipaje, una cómoda carpa plegable y mucho espacio en la cabina.\",\r\n    \"imagesList\": [\r\n        {\r\n            \"idImage\": 1152\r\n        },\r\n        {\r\n            \"idImage\": 1153\r\n        },\r\n        {\r\n            \"idImage\": 1154\r\n        },\r\n        {\r\n            \"idImage\": 1155\r\n        },\r\n        {\r\n            \"idImage\": 1156\r\n        }\r\n    ],\r\n    \"usagePoliciesList\": [\r\n        {\r\n            \"idUsagePolicy\": 1\r\n        },\r\n        {\r\n            \"idUsagePolicy\": 3\r\n        },\r\n        {\r\n            \"idUsagePolicy\": 63\r\n        },\r\n        {\r\n            \"idUsagePolicy\": 65\r\n        },\r\n        {\r\n            \"idUsagePolicy\": 66\r\n        },\r\n        {\r\n            \"idUsagePolicy\": 73\r\n        },\r\n        {\r\n            \"idUsagePolicy\": 75\r\n        },\r\n        {\r\n            \"idUsagePolicy\": 87\r\n        },\r\n        {\r\n            \"idUsagePolicy\": 61\r\n        }\r\n    ],\r\n    \"city\": {\r\n        \"idCity\": 52\r\n    },\r\n    \"model\": \"Hilux\",\r\n    \"vehiclePlate\": \"hilux10\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/vehicle"
+					},
+					"response": []
+				},
+				{
+					"name": "Vehicle-GetByID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/vehicle/902"
+					},
+					"response": []
+				},
+				{
+					"name": "Vehicle-Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"characteristicsList\": [\r\n        {\r\n            \"idCharacteristic\": 4\r\n        },\r\n        {\r\n            \"idCharacteristic\": 7\r\n        },\r\n        {\r\n            \"idCharacteristic\": 8\r\n        }\r\n    ],\r\n    \"vehicleType\": {\r\n        \"idVehicleType\": 3\r\n        },\r\n    \"pricePerDay\": 3.62,\r\n    \"details\": \"Sidecar Harley Davidson año 1930 sin rodar. Color Negro.\",\r\n    \"imagesList\": [\r\n        {\r\n            \"idImage\": 855\r\n        },\r\n        {\r\n            \"idImage\": 856\r\n        },\r\n        {\r\n            \"idImage\": 858\r\n        },\r\n        {\r\n            \"idImage\": 859\r\n        },\r\n        {\r\n            \"idImage\": 860\r\n        }\r\n    ],\r\n    \"model\": \"puntas \"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/vehicle/354"
+					},
+					"response": []
+				},
+				{
+					"name": "Vehicle-Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:8080/vehicle/delete/402"
+					},
+					"response": []
+				},
+				{
+					"name": "Vehicle-List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/vehicle"
+					},
+					"response": []
+				},
+				{
+					"name": "Vehicle-RandomList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/vehicle/random-list"
+					},
+					"response": []
+				},
+				{
+					"name": "Vehicles-FilterByCityName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/vehicle/filterByCityName/San%20Carlos%20de%20Bariloche",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle",
+								"filterByCityName",
+								"San%20Carlos%20de%20Bariloche"
+							],
+							"query": [
+								{
+									"key": "city",
+									"value": "San%20Carlos%20de%20Bariloche",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vehicles-FilterByVehicleType-Paginated",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/vehicle/category?vehicleTypeId=52",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle",
+								"category"
+							],
+							"query": [
+								{
+									"key": "vehicleTypeId",
+									"value": "52"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vehicle-FilterByDate",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/vehicle/filterByDate?start=2023/12/01&end=2023/12/10",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle",
+								"filterByDate"
+							],
+							"query": [
+								{
+									"key": "start",
+									"value": "2023/12/01"
+								},
+								{
+									"key": "end",
+									"value": "2023/12/10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vehicle-FilterByCityNameAndDate",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/vehicle/filterByCityDate/San%20Carlos%20de%20Bariloche?start=2023/12/01&end=2023/12/10",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle",
+								"filterByCityDate",
+								"San%20Carlos%20de%20Bariloche"
+							],
+							"query": [
+								{
+									"key": "start",
+									"value": "2023/12/01"
+								},
+								{
+									"key": "end",
+									"value": "2023/12/10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vehicle-FindByPlate",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/vehicle/findByPlate?plate=roi%20549",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle",
+								"findByPlate"
+							],
+							"query": [
+								{
+									"key": "plate",
+									"value": "roi%20549"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "VehicleTypes",
+			"item": [
+				{
+					"name": "VehicleType-Create",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": {}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Auto Carpa\",\r\n    \"details\": \"Un auto con un accesorio, generalmente en el techo (aunque no siempre). Este accesorio brinda la facilidad de tener una carpa en pocos segundos, estés donde estés.\",\r\n    \"image\": {\r\n        \"idImage\": 18\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/vehicleType"
+					},
+					"response": []
+				},
+				{
+					"name": "VehicleType-GetByID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/vehicleType/2"
+					},
+					"response": []
+				},
+				{
+					"name": "VehicleType-Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"image\": {\r\n        \"idImage\": 3\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/vehicleType/53"
+					},
+					"response": []
+				},
+				{
+					"name": "VehicleType-Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:8080/vehicleType/delete/7"
+					},
+					"response": []
+				},
+				{
+					"name": "VehicleType-List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/vehicleType"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Characteristics",
+			"item": [
+				{
+					"name": "Characteristic-Create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"El campo 'title' no está vacío\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.title).to.not.equal(\"\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Prueba NO USAR\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/characteristic"
+					},
+					"response": []
+				},
+				{
+					"name": "Characteristic-GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/characteristic/12"
+					},
+					"response": []
+				},
+				{
+					"name": "Characteristic-Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": "localhost:8080/characteristic/11"
+					},
+					"response": []
+				},
+				{
+					"name": "Characteristic-Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:8080/characteristic/deleteCharacteristic/101"
+					},
+					"response": []
+				},
+				{
+					"name": "Characteristic-List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/characteristic"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Images",
+			"item": [
+				{
+					"name": "Images-Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/Agus/Desktop/logo autocarpa.png"
+								}
+							]
+						},
+						"url": "localhost:8080/image"
+					},
+					"response": []
+				},
+				{
+					"name": "Images-FindByID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/image/860"
+					},
+					"response": []
+				},
+				{
+					"name": "Images-Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:8080/image/delete/802"
+					},
+					"response": []
+				},
+				{
+					"name": "Images-ListAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/image"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Registration",
+			"item": [
+				{
+					"name": "Registration-Create",
+					"request": {
+						"auth": {
+							"type": "jwt",
+							"jwt": {
+								"algorithm": "HS256",
+								"isSecretBase64Encoded": false,
+								"payload": "{}",
+								"addTokenTo": "header",
+								"headerPrefix": "Bearer",
+								"queryParamKey": "token",
+								"header": "{}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Renata\",\r\n    \"lastName\": \"Glasc\",\r\n    \"email\": \"renata@glasc.com\",\r\n    \"password\": \"abcdefg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/users/save"
+					},
+					"response": []
+				},
+				{
+					"name": "Registration-AscendToAdmin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZ3VzLmNhc2Fyb25lQGdtYWlsLmNvbSIsImV4cCI6MTY4NzgyNjc0Mywibm9tYnJlIjoiYWd1cyJ9.VoNjGLP6mL-b2Wxw8cxuxzWoskEbGU8CN67sWfXFdj3zufHO0zSowz63ivkAEsSJ"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"agus.casarone@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/users/ascendToAdmin"
+					},
+					"response": []
+				},
+				{
+					"name": "Registration-List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZ3VzLmNhc2Fyb25lQGdtYWlsLmNvbSIsImV4cCI6MTY4NjYzNzAzMywibm9tYnJlIjoiYWd1cyJ9.mh01o5SaA-SDZ6519pjM9F3pOlH76SgvrS1t_aFCllVle8VZyW-tMpsOT-BXeLsM"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/users/list"
+					},
+					"response": []
+				},
+				{
+					"name": "Registration-FindByEmail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/users/findByEmail/emi.navarro90@gmail.com"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "LogIn",
+			"item": [
+				{
+					"name": "LogIn",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "username",
+								"value": "agus.casarone@gmail.com",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "password",
+								"value": "123abc",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"agus.casarone@gmail.com\",\r\n    \"password\": \"123abc\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/login"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Places",
+			"item": [
+				{
+					"name": "Cities",
+					"item": [
+						{
+							"name": "Cities-Create",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"cityName\": \"Merlo\",\r\n  \"province\": {\r\n    \"idProvince\": 102\r\n  },\r\n  \"country\": {\r\n    \"idCountry\": 1\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/city"
+							},
+							"response": []
+						},
+						{
+							"name": "Cities-GetByID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:8080/city/56"
+							},
+							"response": []
+						},
+						{
+							"name": "Cities-Update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"cityName\": \"Villa Mercedes\",\r\n    \"province\": {\r\n        \"idProvince\": 102\r\n    },\r\n    \"country\": {\r\n        \"idCountry\": 102012\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/city/102"
+							},
+							"response": []
+						},
+						{
+							"name": "Cities-Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": "localhost:8080/city/delete/56"
+							},
+							"response": []
+						},
+						{
+							"name": "Cities-ListAll",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:8080/city"
+							},
+							"response": []
+						},
+						{
+							"name": "Cities-FindByName",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:8080/city/findByCityName/la%20plata"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Provinces",
+					"item": [
+						{
+							"name": "Provinces-Create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"provinceName\": \"Córdoba\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/province"
+							},
+							"response": []
+						},
+						{
+							"name": "Provinces-GetByID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:8080/province/22"
+							},
+							"response": []
+						},
+						{
+							"name": "Provinces-Update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"provinceName\": \"Ciudad Autónoma de Buenos Aires\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/province/23"
+							},
+							"response": []
+						},
+						{
+							"name": "Provinces-Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": "localhost:8080/province/delete/23"
+							},
+							"response": []
+						},
+						{
+							"name": "Provinces-ListAll",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:8080/province"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Countries",
+					"item": [
+						{
+							"name": "Countries-Create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"countryName\": \"Chile\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/country"
+							},
+							"response": []
+						},
+						{
+							"name": "Countries-GetByID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:8080/country/2"
+							},
+							"response": []
+						},
+						{
+							"name": "Countries-Update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"countryName\": \"Venezuela\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/country/2"
+							},
+							"response": []
+						},
+						{
+							"name": "Countries-Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": "localhost:8080/country/delete/102"
+							},
+							"response": []
+						},
+						{
+							"name": "Countries-ListAll",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:8080/country"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Bookings",
+			"item": [
+				{
+					"name": "Booking-Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"startDate\": \"2023-06-12\",\r\n    \"endDate\": \"2023-05-30\",\r\n    \"vehicle\": {\r\n        \"idVehicle\": 252\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/booking"
+					},
+					"response": []
+				},
+				{
+					"name": "Booking-GetByID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/booking/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Booking-Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"startDate\": \"2023-06-01\",\r\n    \"endDate\": \"2023-06-30\",\r\n    \"vehicle\": {\r\n        \"idVehicle\": 105\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/booking/2"
+					},
+					"response": []
+				},
+				{
+					"name": "Booking-Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:8080/booking/delete/2"
+					},
+					"response": []
+				},
+				{
+					"name": "Booking-ListAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/booking"
+					},
+					"response": []
+				},
+				{
+					"name": "Booking-FindAllByUserId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/booking/findAllByUserId/802"
+					},
+					"response": []
+				},
+				{
+					"name": "Booking-FindAllByProductId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/booking/findAllByProductId/105"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "UsagePolicies",
+			"item": [
+				{
+					"name": "UsagePolicy-Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"description\": \"Usar casco\",\r\n  \"usagePolicyType\": \"SALUD_Y_SEGURIDAD\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/usagePolicy"
+					},
+					"response": []
+				},
+				{
+					"name": "UsagePolicy-GetByID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/usagePolicy/3"
+					},
+					"response": []
+				},
+				{
+					"name": "UsagePolicy-Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"description\": \"Se permite viajar con perros en el sidecar de la moto siempre y cuando el perro esté asegurado con un arnés o correa adecuada y se le proporcione un casco protector para perros. Además, se debe garantizar su bienestar y comodidad.\",\r\n  \"usagePolicyType\": \"NORMAS_DE_LA_CASA\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/usagePolicy/3"
+					},
+					"response": []
+				},
+				{
+					"name": "UsagePolicy-Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:8080/usagePolicy/delete/55"
+					},
+					"response": []
+				},
+				{
+					"name": "UsagePolicy-ListAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/usagePolicy"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

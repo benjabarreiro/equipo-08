@@ -1,0 +1,11 @@
+.pagination-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 24px;
+    margin-top: auto;
+}
+
+.page-counter {
+    color: #FBC02D;
+}

@@ -1,0 +1,40 @@
+.images-overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.images-overlay-main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-overlay-main {
+  width: 768px;
+  height: 500px;
+  margin-bottom: 20px;
+}
+.image-overlay-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.images-overlay-carousel {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+.image-overlay-carousel {
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden; 
+}
+
+.image-overlay-carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
